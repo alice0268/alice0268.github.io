@@ -2,16 +2,85 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title> 我不知道</title>
+<title> 可可表情包</title>
+<style>
+    .image-left {
+      float: left; /* 让图像靠左浮动 */
+      margin-right: 15px; /* 在图像和文本之间留出空间 */
+      margin-bottom: 15px; /* 避免图像顶部与段落顶部重叠 */
+    }
+    /* 清除浮动以防止后续块级元素受到影响 */
+    .clear {
+      clear: both;
+    }
+    body {
+            background-image: url("http://cdnjson.com/images/2024/09/05/5.jpg");
+            background-repeat: no-repeat;
+        }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var buttons = document.querySelectorAll('.toggleText');
+
+// 为每个按钮添加点击事件监听器
+buttons.forEach(function(button) {
+  button.addEventListener('click', function() {
+    // 获取按钮的初始文本
+    var originalText = this.getAttribute('data-original-text');
+    
+    // 判断当前文本是否为原始文本
+    if (this.textContent === originalText) {
+      this.textContent = '收起';
+    } else {
+      this.textContent = originalText;
+    }
+  });
+});
+});
+</script>
+  </script>
 </head>
 <body>
-<body background="photo/5.jpg"alt="background"></body>
-<h1 style="font-family:华文中宋;font-size:30px" >这也行嘛</h1>
+<h1 style="font-family:华文中宋;font-size:30px" >欢迎看可</h1>
 <hr>
 <!--写个注释试试呢--> 
-<h2 style="font-family:华文中宋;font-size:20px">试试看</h2>
-<a style="font-size:18px" href="https://weibo.com" > 这是一个微博链接&#128516; </a>
-<p><img  src="photo/coco.png" /></p>
+<!--a style="font-size:18px" href="https://weibo.com" > 这是一个微博链接&#128516; </a>-->
 
+
+<button id="buttonContainer" class="toggleText" onclick="myFunction()" data-original-text="点击看看">点击看看</button>
+
+<div id="content" style="display:none;">
+  
+    <p>这里是一只可可</p>  
+    <p><img class="image-left" src="http://cdnjson.com/images/2024/09/05/coco.png"/> </p> 
+    <button class="toggleText" onclick="myCoco()" data-original-text="两只可可">两只可可</button>
+  
+</div>
+<div id="coco" style="display:none;">
+  <p><img class="image-left" src="http://cdnjson.com/images/2024/09/05/8dfd33219d98d0f65.jpg  " style="position:absolute; top:100px; left:600px;" /> </p> 
+  <!--p><video  controls style="position:absolute; top:400px; left:600px;">
+        <source src="https://weibo.com/tv/show/1034:5075295850397795" type="video/mp4" /></p>-->
+    </div>
+
+<script>
+    function myFunction() {
+    var content = document.getElementById('content');
+  if (content.style.display == 'none' || content.style.display == '') {
+    content.style.display = 'block';
+  } else {
+    content.style.display = 'none';
+  }
+}
+    </script>
+<script>
+    function myCoco() {
+    var content = document.getElementById('coco');
+  if (coco.style.display == 'none' || coco.style.display == '') {
+    coco.style.display = 'block';
+  } else {
+    coco.style.display = 'none';
+  }
+}
+    </script>
 </body>
 </html>
